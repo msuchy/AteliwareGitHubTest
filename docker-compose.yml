@@ -1,0 +1,27 @@
+version: '3'
+volumes:
+  data:
+services:
+  web:
+    build: .
+    container_name: ruby-web
+    command: /bin/bash -c "while [ true ]; do sleep 10; done"
+    ports: ["3000:3000"]
+    expose: ["3000"]
+    volumes:
+      - ".:/app"
+    depends_on:
+      - db
+    links:
+      - db:database_srv
+  db:
+    image: mysql
+    ports:
+      - "3307:3306"
+    container_name: mysql
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=app_development
+
