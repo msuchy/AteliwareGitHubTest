@@ -1,12 +1,7 @@
 # AteliwareGitHubTest
-List GitHub trending repositories of 5 languages
+Listar os repositórios destaque do GitHub de cinco linguagens.
 
-Enunciado:
-
-> Segue o exercício de recrutamento, utilize o tempo que achar necessário para
-construir a solução e se tiver qualquer dúvida, fique a vontade para perguntar
-ok?
->
+## Requisitos
 > Construir uma nova aplicação utilizando o framework de sua preferência
 (ex: Rails, ASP.NET, Phoenix, etc.) que irá conectar na API do GitHub e
 disponibilizar as seguintes funcionalidades:
@@ -24,8 +19,24 @@ sua escolha
 >   - Utilizar Postgres, MySQL ou SQL Server
 >   - O deploy deve ser realizado no Heroku ou Azure
 >   - A aplicação precisa ter testes automatizados
->
-> ATENÇÃO: se você não conseguiu finalizar o teste, por favor nos diga o
-motivo e descreva quais foram as suas dificuldades.
->
-> Assim que terminar, nos avise para continuarmos o processo
+
+## pgAdmin
+Acesso ao pgAdmin:
+```
+http://localhost:5050
+user: pgadmin4@pgadmin.org
+password: admin
+```
+
+Acesso à Base de dados
+```
+Host: database_srv
+Db: myDb
+User: myUser
+Password: myPassword
+```
+
+Arquivo de criação da base de dados
+```
+./Seed/DatabaseSchema.sql
+```

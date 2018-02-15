@@ -15,13 +15,35 @@ services:
     links:
       - db:database_srv
   db:
-    image: mysql
+    image: postgres
     ports:
-      - "3307:3306"
-    container_name: mysql
+      - "5432:5432"
+    expose: ["5432"]
+    container_name: pg
     volumes:
-      - data:/var/lib/mysql
+      - data:/var/lib/pg
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=app_development
+      - POSTGRES_USER=myUser
+      - POSTGRES_PASSWORD=myPassword
+      - POSTGRES_DB=myDb
+      - PGDATA=data
+    networks:
+      - postgres
+
+  pgadmin:
+    container_name: pgAdmin
+    links:
+      - db:database_srv
+    image: fenglc/pgadmin4
+    volumes:
+        - /data/pgadmin:/root/.pgadmin
+    ports:
+      - "5050:5050"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
 
