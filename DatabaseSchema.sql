@@ -10,7 +10,6 @@ CREATE TABLE repositories (
      description  varchar(200),
      stars        integer,
      forks        integer,
-     url          varchar (200),
      last_updated timestamp
 );
 
