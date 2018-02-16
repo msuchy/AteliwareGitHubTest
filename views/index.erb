@@ -4,15 +4,20 @@
   <table class="table table-striped table-sm">
     <thead>
       <tr>
+        <th>Id</th>
         <th>Nome</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
+    <% @repositories.each do |repo| %>
       <tr>
-        <td>nome do repositorio</td>
-        <td><a class="nav-link active" href="#">detalhes</a></td>
+        <td><%=repo.id%></td>
+        <td><%=repo.name%></td>
+        <td><a class="nav-link active" href="/details/<%=repo.id%>">detalhes</a></td>
       </tr>
+    <% end %>
+
     </tbody>
   </table>
 </div>
