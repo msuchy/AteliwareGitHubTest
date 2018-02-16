@@ -12,3 +12,8 @@ end
 
 get '/update' do
 end
+
+get '/details/:id' do
+  @repository = Repository.find params['id']
+  erb :detail
+end

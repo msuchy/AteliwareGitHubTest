@@ -1,0 +1,31 @@
+
+<h2><%= @repository['name'] %></h2>
+<a href="/">voltar</a>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <tbody>
+      <tr>
+        <td>nome</td>
+        <td><a href="http://github.com/<%= @repository['name'] %>"
+            target="_blank"><%= @repository['name'] %></a>
+        </td>
+      </tr>
+      <tr>
+        <td>descrição</td>
+        <td><%= @repository['description'] %></td>
+      </tr>
+      <tr>
+        <td>Linguagem</td>
+        <td><%= @repository['language_name'] %></td>
+      </tr>
+      <tr>
+        <td>Estrelas</td>
+        <td><%= @repository['stars'] %></td>
+      </tr>
+      <tr>
+        <td>Forks</td>
+        <td><%= @repository['forks'] %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
